@@ -42,13 +42,11 @@ A sample project to use firebase in an Angular project WITHOUT AngularFire, the 
 }
 ```
 
-3. Add a environments folder at `/src` level, create two files with the following content:
+3. Add firebaseCredentials to your `/src/environments/environment.ts` file:
 
-    1. environment.prod.ts  
-    `export const environment = { production: true };`
-    
-    2. environment.ts  
-    ```export const environment = {
+    environment.ts: 
+    ```
+        export const environment = {
         production: false,
         firebaseCredentials: {
           apiKey: 'your-api-key-here',
@@ -58,7 +56,8 @@ A sample project to use firebase in an Angular project WITHOUT AngularFire, the 
           storageBucket: 'yout-storage-bucket-here',
           messagingSenderId: 'your-messaging-sender-id-here'
         }
-      };```
+      };
+    ```
 
 
 
