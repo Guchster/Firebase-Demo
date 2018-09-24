@@ -4,24 +4,61 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve -o` for a dev server. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## What do I have here?
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+A sample project to use firebase in an Angular project WITHOUT AngularFire, the following basic operations are provided:
 
-## Build
+* Get
+* Get (full node, iteration over list items)
+* Set
+* Push
+* Transaction
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## What you need to do
 
-## Running unit tests
+1. Create a firebase project [here](https://console.firebase.google.com) 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. add/import the following JSON example to your realtime database:
+```
+{
+"test" : {
+    "counters" : {
+      "button1" : 13
+    },
+    "tasks" : {
+      "id123" : "Ir de compras",
+      "id1234" : "Pasear al perro",
+      "idtest" : "Limpiar la cocina"
+    },
+    "users" : {
+      "userid1" : "Rodrigo",
+      "userid2" : "Carlos",
+      "userid3" : "Santiago",
+      "userid76" : "Pedro"
+    }
+  }
+}
+```
 
-## Running end-to-end tests
+3. Add a environments folder at `/src` level, create two files with the following content:
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+    1. environment.prod.ts  
+    `export const environment = { production: true };`
+    
+    2. environment.ts  
+    ```export const environment = {
+        production: false,
+        firebaseCredentials: {
+          apiKey: 'your-api-key-here',
+          authDomain: 'your-auth-domain-here',
+          databaseURL: 'your-database-url-here',
+          projectId: 'your-project-id-here',
+          storageBucket: 'yout-storage-bucket-here',
+          messagingSenderId: 'your-messaging-sender-id-here'
+        }
+      };```
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
