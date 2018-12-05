@@ -2,6 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
+That means you will have to install npm dependencies with ```npm i``` after cloning this project.
+
 ## Development server
 
 Run `ng serve -o` for a dev server. The app will automatically reload if you change any of the source files.
